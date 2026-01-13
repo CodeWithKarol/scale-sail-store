@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+/**
+ * Hero Section
+ */
 @Component({
   selector: 'app-hero-section',
   templateUrl: './hero-section.html',
