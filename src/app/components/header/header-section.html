@@ -3,7 +3,7 @@
 >
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
     <!-- Logo -->
-    <div class="flex lg:flex-1">
+    <div class="flex xl:flex-1">
       <a href="#" class="-m-1.5 p-1.5 flex items-center gap-3 transition-opacity hover:opacity-80">
         <span class="sr-only">Scale Sail</span>
         <div
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Mobile Menu Button -->
-    <div class="flex lg:hidden">
+    <div class="flex xl:hidden">
       <button
         type="button"
         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700 hover:text-indigo-600 transition-colors"
@@ -53,7 +53,7 @@
     </div>
 
     <!-- Desktop Navigation -->
-    <div class="hidden lg:flex lg:gap-x-12">
+    <div class="hidden xl:flex xl:gap-x-12">
       <a
         href="#catalog"
         class="text-sm font-semibold leading-6 text-slate-900 hover:text-indigo-600 transition-colors"
@@ -77,7 +77,7 @@
     </div>
 
     <!-- Desktop Actions -->
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-8 items-center">
+    <div class="hidden xl:flex xl:flex-1 xl:justify-end xl:gap-x-8 items-center">
       <a
         href="#"
         class="text-sm font-semibold leading-6 text-slate-900 hover:text-indigo-600 transition-colors"
@@ -95,7 +95,7 @@
 
 <!-- Mobile Menu Portal -->
 @if (isMobileMenuOpen()) {
-<div class="relative z-[100] lg:hidden" role="dialog" aria-modal="true">
+<div class="relative z-[100] xl:hidden" role="dialog" aria-modal="true">
   <!-- Backdrop -->
   <div
     class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-100"
