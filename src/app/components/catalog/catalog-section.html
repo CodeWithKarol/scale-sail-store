@@ -1,60 +1,137 @@
-<section id="catalog" class="py-24 bg-slate-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mb-12">
-      <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">
-        Templates
-      </h2>
-      <p class="mt-4 text-xl text-slate-500">Pick a template, customize in minutes, deploy anywhere. Live demos included.</p>
+<section id="catalog" class="bg-slate-50 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Templates</h2>
+      <p class="mt-4 text-lg leading-8 text-slate-600">
+        Pick a template, customize in minutes, deploy anywhere. Live demos included.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+    <div
+      class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+    >
       @for (product of products(); track product.id) {
-        <div class="bg-white border border-slate-200 rounded-2xl flex flex-col overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <!-- Thumbnail Placeholder -->
-          <div class="aspect-[16/9] {{getProductColor(product.id)}} relative flex items-center justify-center text-white/90 font-bold text-2xl tracking-wider p-4 text-center leading-snug">
-             {{ product.name }}
-          </div>
-          
-          <div class="flex-1 p-6 flex flex-col">
-            <div class="flex items-center justify-between mb-2">
-                <h3 class="text-lg font-bold text-slate-900 truncate pr-2" title="{{ product.name }}">{{ product.name }}</h3>
-                <span class="text-lg font-bold text-indigo-600 shrink-0">
-                    {{ product.price.label ?? ((product.price.amountMinor / 100) | currency:product.price.currency) }}
-                </span>
-            </div>
-            
-            <p class="text-xs text-indigo-600 font-medium mb-3">
-              Best for: {{ product.bestFor.join(', ') }}
-            </p>
-            <p class="text-sm text-slate-600 mb-4 flex-grow">{{ product.description }}</p>
-
-            <div class="flex flex-wrap gap-2 mb-6">
-                @for (chip of product.chips; track chip) {
-                    <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">
-                        {{ chip }}
-                    </span>
-                }
-            </div>
-
-            <div class="flex items-center gap-3 mt-auto">
-                @if (product.previewUrl) {
-                  <a [href]="product.previewUrl" target="_blank" class="flex-1 bg-white border border-slate-300 rounded-lg py-2.5 px-4 flex items-center justify-center text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors">
-                      Live preview
-                  </a>
-                }
-                <a [href]="product.buyUrl" target="_blank" class="flex-1 bg-indigo-600 border border-transparent rounded-lg py-2.5 px-4 flex items-center justify-center text-sm font-bold text-white hover:bg-indigo-700 transition-colors">
-                    {{ product.price.amountMinor === 0 ? 'Get on Gumroad' : 'Buy on Gumroad' }}
-                </a>
+      <article
+        class="flex flex-col items-start justify-between group rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-xl hover:ring-slate-300 hover:-translate-y-1 duration-300 overflow-hidden"
+      >
+        <div class="relative w-full">
+          <!-- Image Container -->
+          <div
+            class="aspect-[16/9] w-full bg-slate-100 sm:aspect-[2/1] lg:aspect-[3/2] overflow-hidden"
+          >
+            <img
+              [src]="getProductImage(product.id)"
+              [alt]="product.name"
+              class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <!-- Badge overlay -->
+            <div class="absolute top-4 left-4 flex gap-2 z-10">
+              @if(product.price.amountMinor === 0) {
+              <span
+                class="inline-flex items-center rounded-lg bg-white/95 backdrop-blur-sm px-3 py-1 text-xs font-bold text-green-700 shadow-sm ring-1 ring-black/5"
+                >Free</span
+              >
+              } @else {
+              <span
+                class="inline-flex items-center rounded-lg bg-white/95 backdrop-blur-sm px-3 py-1 text-xs font-bold text-slate-700 shadow-sm ring-1 ring-black/5"
+                >Premium</span
+              >
+              }
             </div>
           </div>
         </div>
+
+        <div class="w-full p-6 flex-1 flex flex-col">
+          <!-- Tags Row -->
+          <div class="flex flex-wrap gap-2 text-xs mb-3">
+            @for (tag of product.bestFor.slice(0, 2); track tag) {
+            <span
+              class="inline-flex items-center rounded-md bg-slate-100 px-2 py-1 font-medium text-slate-600"
+            >
+              {{ tag }}
+            </span>
+            } @if (product.bestFor.length > 2) {
+            <span
+              class="inline-flex items-center rounded-md bg-slate-50 px-2 py-1 font-medium text-slate-400"
+              >+{{ product.bestFor.length - 2 }}</span
+            >
+            }
+          </div>
+
+          <!-- Title -->
+          <h3
+            class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors"
+          >
+            <a [href]="product.buyUrl" target="_blank">
+              <span class="absolute inset-0"></span>
+              {{ product.name }}
+            </a>
+          </h3>
+
+          <!-- Description -->
+          <p class="mt-2 text-sm leading-relaxed text-slate-500 line-clamp-2">
+            {{ product.description }}
+          </p>
+
+          <!-- Chips / Features -->
+          <div class="mt-4 border-t border-slate-100 pt-4">
+            <ul class="flex flex-col gap-2 text-xs font-medium text-slate-500">
+              @for (chip of product.chips.slice(0, 3); track chip) {
+              <li class="flex items-center gap-2">
+                <div class="h-1.5 w-1.5 rounded-full bg-indigo-500"></div>
+                {{ chip }}
+              </li>
+              }
+            </ul>
+          </div>
+
+          <!-- Spacer to push footer down -->
+          <div class="flex-grow"></div>
+
+          <!-- Actions Footer -->
+          <div class="mt-6 flex items-center justify-between gap-4 pt-4 border-t border-slate-100">
+            <div class="flex flex-col">
+              <span class="text-xs font-medium text-slate-400">Price</span>
+              <span class="text-lg font-bold text-slate-900">
+                {{
+                  product.price.label ??
+                    (product.price.amountMinor / 100 | currency : product.price.currency)
+                }}
+              </span>
+            </div>
+
+            <div class="flex items-center gap-2 relative z-10">
+              @if (product.previewUrl) {
+              <a
+                [href]="product.previewUrl"
+                target="_blank"
+                class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-50 transition-all"
+              >
+                Preview
+              </a>
+              }
+              <a
+                [href]="product.buyUrl"
+                target="_blank"
+                class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 hover:shadow-indigo-600/20 transition-all"
+              >
+                {{ product.price.amountMinor === 0 ? 'Get it free' : 'Buy' }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
       }
     </div>
-    
-    <div class="mt-8 text-center">
-        <p class="text-sm text-slate-500 bg-slate-100 inline-block py-2 px-4 rounded-full border border-slate-200">
-            Current download: Instant download after purchase. Deploy on Netlify, Vercel, GitHub Pages, or any static host.
-        </p>
+
+    <div class="mt-16 text-center">
+      <p
+        class="inline-flex items-center rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-600/10"
+      >
+        Current download: Instant download after purchase. Deploy on Netlify, Vercel, GitHub Pages,
+        or any static host.
+      </p>
     </div>
   </div>
 </section>
