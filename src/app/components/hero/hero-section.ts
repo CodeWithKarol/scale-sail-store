@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 
 /**
  * Hero Section
@@ -8,5 +9,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './hero-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [NgOptimizedImage],
 })
 export class HeroSection {}
