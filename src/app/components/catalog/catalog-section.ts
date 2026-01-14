@@ -9,7 +9,7 @@ import { ProductCard } from './product-card/product-card';
   templateUrl: './catalog-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CurrencyPipe, CommonModule, ProductCard],
+  imports: [CommonModule, ProductCard],
 })
 export class CatalogSection {
   products = signal<readonly ScaleSailTemplate[]>(SCALE_SAIL_TEMPLATES);
