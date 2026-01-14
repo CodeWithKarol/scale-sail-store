@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-@import "tailwindcss";
+@import 'tailwindcss';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    font-family: 'Inter', sans-serif;
-    @apply antialiased text-slate-600;
+  font-family: 'Inter', sans-serif;
+  @apply antialiased text-slate-600;
 }

@@ -1,18 +1,21 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-/**
- * Header Section Component
- */
 @Component({
   selector: 'app-header-section',
   templateUrl: './header-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
 })
 export class HeaderSection {
-  isMobileMenuOpen = signal(false);
+  protected readonly isMobileMenuOpen = signal(false);
+
+  protected readonly navigation = [
+    { name: 'Templates', href: '#catalog' },
+    { name: "What's included", href: '#included' },
+    { name: 'How it works', href: '#how-it-works' },
+    { name: 'FAQ', href: '#faq' },
+  ];
 
   toggleMobileMenu() {
     this.isMobileMenuOpen.update((value) => !value);

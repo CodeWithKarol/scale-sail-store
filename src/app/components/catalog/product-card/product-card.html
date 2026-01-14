@@ -1,0 +1,96 @@
+<article
+  class="flex flex-col items-start justify-between group rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-xl hover:ring-slate-300 hover:-translate-y-1 duration-300 overflow-hidden h-full"
+>
+  <div class="relative w-full">
+    <!-- Image Container -->
+    <div class="aspect-[16/9] w-full bg-slate-100 sm:aspect-[2/1] lg:aspect-[3/2] overflow-hidden">
+      <img
+        [src]="productImage()"
+        [alt]="product().name"
+        class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
+      <!-- Badge overlay -->
+      <div class="absolute top-4 left-4 flex gap-2 z-10">
+        @if(product().price.amountMinor === 0) {
+        <span
+          class="inline-flex items-center rounded-lg bg-white/95 backdrop-blur-sm px-3 py-1 text-xs font-bold text-green-700 shadow-sm ring-1 ring-black/5"
+          >Free</span
+        >
+        } @else {
+        <span
+          class="inline-flex items-center rounded-lg bg-white/95 backdrop-blur-sm px-3 py-1 text-xs font-bold text-slate-700 shadow-sm ring-1 ring-black/5"
+          >Premium</span
+        >
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full p-6 flex-1 flex flex-col">
+    <!-- Tags Row -->
+    <div class="flex flex-wrap gap-2 text-xs mb-3">
+      @for (tag of product().bestFor.slice(0, 2); track tag) {
+      <span
+        class="inline-flex items-center rounded-md bg-slate-100 px-2 py-1 font-medium text-slate-600"
+      >
+        {{ tag }}
+      </span>
+      } @if (product().bestFor.length > 2) {
+      <span
+        class="inline-flex items-center rounded-md bg-slate-50 px-2 py-1 font-medium text-slate-400"
+        >+{{ product().bestFor.length - 2 }}</span
+      >
+      }
+    </div>
+
+    <!-- Title -->
+    <h3
+      class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors"
+    >
+      <a [href]="product().buyUrl" target="_blank">
+        <span class="absolute inset-0"></span>
+        {{ product().name }}
+      </a>
+    </h3>
+
+    <!-- Description -->
+    <p class="mt-2 text-sm leading-relaxed text-slate-500 line-clamp-2">
+      {{ product().description }}
+    </p>
+
+    <!-- Chips / Features -->
+    <div class="mt-4 border-t border-slate-100 pt-4">
+      <ul class="flex flex-col gap-2 text-xs font-medium text-slate-500">
+        @for (chip of product().chips.slice(0, 3); track chip) {
+        <li class="flex items-center gap-2">
+          <div class="h-1.5 w-1.5 rounded-full bg-indigo-500"></div>
+          {{ chip }}
+        </li>
+        }
+      </ul>
+    </div>
+
+    <!-- Spacer to push footer down -->
+    <div class="flex-grow"></div>
+
+    <!-- Actions Footer -->
+    <div class="mt-6 flex items-center justify-between gap-4 pt-4 border-t border-slate-100">
+      <div class="flex flex-col">
+        <span class="text-xs font-medium text-slate-400">Price</span>
+        <span class="text-lg font-bold text-slate-900">
+          {{
+            product().price.label ??
+              (product().price.amountMinor / 100 | currency : product().price.currency)
+          }}
+        </span>
+      </div>
+      <a
+        [href]="product().buyUrl"
+        class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-slate-900 hover:bg-slate-800 transition-all z-20"
+      >
+        @if(product().price.amountMinor === 0) { Get it free } @else { Buy now }
+      </a>
+    </div>
+  </div>
+</article>

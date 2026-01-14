@@ -1,10 +1,9 @@
 <header
-  class="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm ring-1 ring-slate-900/5 transition-all duration-300"
+  class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm ring-1 ring-slate-900/5 transition-all duration-300"
 >
-  <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-    <!-- Logo -->
+  <nav class="flex items-center justify-between p-6 xl:px-8" aria-label="Global">
     <div class="flex xl:flex-1">
-      <a href="#" class="-m-1.5 p-1.5 flex items-center gap-3 transition-opacity hover:opacity-80">
+      <a href="#" class="-m-1.5 p-1.5 flex items-center gap-3">
         <span class="sr-only">Scale Sail</span>
         <div
           class="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 shadow-indigo-200"
@@ -26,12 +25,10 @@
         <span class="text-xl font-bold tracking-tight text-slate-900">Scale Sail</span>
       </a>
     </div>
-
-    <!-- Mobile Menu Button -->
     <div class="flex xl:hidden">
       <button
         type="button"
-        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700 hover:text-indigo-600 transition-colors"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700 hover:text-indigo-600"
         (click)="toggleMobileMenu()"
       >
         <span class="sr-only">Open main menu</span>
@@ -51,33 +48,16 @@
         </svg>
       </button>
     </div>
-
-    <!-- Desktop Navigation -->
     <div class="hidden xl:flex xl:gap-x-12">
+      @for (item of navigation; track item.name) {
       <a
-        href="#catalog"
+        [href]="item.href"
         class="text-sm font-semibold leading-6 text-slate-900 hover:text-indigo-600 transition-colors"
-        >Templates</a
+        >{{ item.name }}</a
       >
-      <a
-        href="#included"
-        class="text-sm font-semibold leading-6 text-slate-900 hover:text-indigo-600 transition-colors"
-        >Whats included</a
-      >
-      <a
-        href="#how-it-works"
-        class="text-sm font-semibold leading-6 text-slate-900 hover:text-indigo-600 transition-colors"
-        >How it works</a
-      >
-      <a
-        href="#faq"
-        class="text-sm font-semibold leading-6 text-slate-900 hover:text-indigo-600 transition-colors"
-        >FAQ</a
-      >
+      }
     </div>
-
-    <!-- Desktop Actions -->
-    <div class="hidden xl:flex xl:flex-1 xl:justify-end xl:gap-x-8 items-center">
+    <div class="hidden xl:flex xl:flex-1 xl:justify-end gap-6 items-center">
       <a
         href="#"
         class="text-sm font-semibold leading-6 text-slate-900 hover:text-indigo-600 transition-colors"
@@ -85,36 +65,30 @@
       >
       <a
         href="#catalog"
-        class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all shadow-indigo-600/20"
+        class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+        >Shop templates <span aria-hidden="true">&rarr;</span></a
       >
-        Shop templates
-      </a>
     </div>
   </nav>
 </header>
 
-<!-- Mobile Menu Portal -->
 @if (isMobileMenuOpen()) {
-<div class="relative z-[100] xl:hidden" role="dialog" aria-modal="true">
-  <!-- Backdrop -->
+<div class="xl:hidden" role="dialog" aria-modal="true">
   <div
-    class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-100"
+    class="fixed inset-0 z-[60] bg-slate-900/60 backdrop-blur-sm"
     (click)="closeMobileMenu()"
   ></div>
-
   <div
-    class="fixed inset-y-0 right-0 z-[100] w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10 shadow-2xl transform transition-transform duration-300 translate-x-0"
+    class="fixed inset-y-0 right-0 z-[60] w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10 transition-transform"
   >
     <div class="flex items-center justify-between">
-      <a
-        href="#"
-        class="-m-1.5 p-1.5 flex items-center gap-x-2 outline-none"
-        (click)="closeMobileMenu()"
-      >
+      <a href="#" class="-m-1.5 p-1.5 flex items-center gap-3" (click)="closeMobileMenu()">
         <span class="sr-only">Scale Sail</span>
-        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600">
+        <div
+          class="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 shadow-indigo-200"
+        >
           <svg
-            class="h-5 w-5 text-white"
+            class="h-6 w-6 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="2"
@@ -131,7 +105,7 @@
       </a>
       <button
         type="button"
-        class="-m-2.5 rounded-md p-2.5 text-slate-700 hover:bg-slate-50 transition-colors"
+        class="-m-2.5 rounded-md p-2.5 text-slate-700 hover:text-indigo-600 transition-colors"
         (click)="closeMobileMenu()"
       >
         <span class="sr-only">Close menu</span>
@@ -147,49 +121,29 @@
         </svg>
       </button>
     </div>
-
-    <div class="mt-8 flow-root">
+    <div class="mt-6 flow-root">
       <div class="-my-6 divide-y divide-slate-500/10">
         <div class="space-y-2 py-6">
+          @for (item of navigation; track item.name) {
           <a
-            href="#catalog"
+            [href]="item.href"
             class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
             (click)="closeMobileMenu()"
-            >Templates</a
+            >{{ item.name }}</a
           >
-          <a
-            href="#included"
-            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
-            (click)="closeMobileMenu()"
-            >Whats included</a
-          >
-          <a
-            href="#how-it-works"
-            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
-            (click)="closeMobileMenu()"
-            >How it works</a
-          >
-          <a
-            href="#faq"
-            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
-            (click)="closeMobileMenu()"
-            >FAQ</a
-          >
+          }
         </div>
         <div class="py-6">
           <a
             href="#"
             class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
-            (click)="closeMobileMenu()"
             >View portfolio</a
           >
           <a
             href="#catalog"
-            class="mt-4 flex w-full items-center justify-center rounded-lg bg-indigo-600 px-3 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 shadow-indigo-600/20 transition-all"
-            (click)="closeMobileMenu()"
+            class="mt-4 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+            >Shop templates</a
           >
-            Shop templates
-          </a>
         </div>
       </div>
     </div>
