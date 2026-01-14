@@ -6,5 +6,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TrustSection {
-  portfolioLink = '#';
+  portfolioLink = 'https://www.karol-modelski.scale-sail.io/';
 }
