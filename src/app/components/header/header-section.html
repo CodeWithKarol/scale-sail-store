@@ -1,27 +1,14 @@
 <header
   class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm ring-1 ring-slate-900/5 transition-all duration-300"
 >
-  <nav class="flex items-center justify-between p-6 xl:px-8" aria-label="Global">
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 xl:px-8"
+    aria-label="Global"
+  >
     <div class="flex xl:flex-1">
       <a href="#" class="-m-1.5 p-1.5 flex items-center gap-3">
         <span class="sr-only">Scale Sail</span>
-        <div
-          class="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 shadow-indigo-200"
-        >
-          <svg
-            class="h-6 w-6 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12l-3-3m0 0l-3 3m3-3v6m-1.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
-            />
-          </svg>
-        </div>
+        <img src="/scale-sail-logo.webp" alt="Scale Sail" class="h-12 w-auto" />
         <span class="text-xl font-bold tracking-tight text-slate-900">Scale Sail</span>
       </a>
     </div>
@@ -65,7 +52,7 @@
       >
       <a
         href="#catalog"
-        class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
         >Shop templates <span aria-hidden="true">&rarr;</span></a
       >
     </div>
@@ -79,28 +66,12 @@
     (click)="closeMobileMenu()"
   ></div>
   <div
-    class="fixed inset-y-0 right-0 z-[60] w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10 transition-transform"
+    class="fixed inset-y-0 right-0 z-[60] w-full overflow-y-auto bg-white px-6 py-4 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10 transition-transform"
   >
     <div class="flex items-center justify-between">
       <a href="#" class="-m-1.5 p-1.5 flex items-center gap-3" (click)="closeMobileMenu()">
         <span class="sr-only">Scale Sail</span>
-        <div
-          class="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 shadow-indigo-200"
-        >
-          <svg
-            class="h-6 w-6 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12l-3-3m0 0l-3 3m3-3v6m-1.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
-            />
-          </svg>
-        </div>
+        <img src="/scale-sail-logo.webp" alt="Scale Sail" class="h-12 w-auto" />
         <span class="text-xl font-bold tracking-tight text-slate-900">Scale Sail</span>
       </a>
       <button
@@ -123,25 +94,27 @@
     </div>
     <div class="mt-6 flow-root">
       <div class="-my-6 divide-y divide-slate-500/10">
-        <div class="space-y-2 py-6">
+        <div class="space-y-1 py-4">
           @for (item of navigation; track item.name) {
           <a
             [href]="item.href"
-            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
+            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-6 text-slate-900 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
             (click)="closeMobileMenu()"
             >{{ item.name }}</a
           >
           }
         </div>
-        <div class="py-6">
+        <div class="py-4">
           <a
             href="#"
             class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
+            (click)="closeMobileMenu()"
             >View portfolio</a
           >
           <a
             href="#catalog"
             class="mt-4 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+            (click)="closeMobileMenu()"
             >Shop templates</a
           >
         </div>
