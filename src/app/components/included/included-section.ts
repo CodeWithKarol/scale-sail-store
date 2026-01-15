@@ -7,14 +7,16 @@ import {
   Paintbrush,
   BookOpen,
   ShieldCheck,
+  PackageCheck,
 } from 'lucide-angular';
+import { SectionHeader } from '../ui/section-header/section-header';
 
 @Component({
   selector: 'app-included-section',
   templateUrl: './included-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, SectionHeader],
 })
 export class IncludedSection {
   readonly Code = Code;
@@ -23,4 +25,5 @@ export class IncludedSection {
   readonly Paintbrush = Paintbrush;
   readonly BookOpen = BookOpen;
   readonly ShieldCheck = ShieldCheck;
+  readonly PackageCheck = PackageCheck;
 }

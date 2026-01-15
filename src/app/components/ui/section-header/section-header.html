@@ -1,0 +1,19 @@
+<div [class]="containerClass()">
+  @if (icon()) {
+  <div [class]="iconContainerClass()">
+    <lucide-angular [img]="icon()" [class]="iconClass()"></lucide-angular>
+  </div>
+  } @if (badge()) {
+  <h2 [class]="badgeClass()">
+    {{ badge() }}
+  </h2>
+  }
+  <p [class]="titleClass()">
+    {{ title() }}
+  </p>
+  @if (description()) {
+  <p [class]="descriptionClass()">
+    {{ description() }}
+  </p>
+  }
+</div>

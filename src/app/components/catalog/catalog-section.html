@@ -1,14 +1,11 @@
 <section id="catalog" class="bg-slate-50 py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-base font-semibold leading-7 text-indigo-600 uppercase tracking-wide">
-        Catalog
-      </h2>
-      <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Templates</p>
-      <p class="mt-6 text-lg leading-8 text-slate-600">
-        Pick a template, customize in minutes, deploy anywhere. Live demos included.
-      </p>
-    </div>
+    <app-section-header
+      [icon]="LayoutTemplate"
+      badge="Catalog"
+      title="Templates"
+      description="Pick a template, customize in minutes, deploy anywhere. Live demos included."
+    ></app-section-header>
 
     <div
       class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"

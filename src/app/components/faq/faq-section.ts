@@ -1,12 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { LucideAngularModule, MessageCircleQuestion } from 'lucide-angular';
+import { SectionHeader } from '../ui/section-header/section-header';
 
 @Component({
   selector: 'app-faq-section',
   templateUrl: './faq-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [LucideAngularModule, SectionHeader],
 })
 export class FaqSection {
+  protected readonly MessageCircleQuestion = MessageCircleQuestion;
+
   protected readonly faqs = [
     {
       question: 'Do I need a framework or build tools?',

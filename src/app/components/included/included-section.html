@@ -1,122 +1,114 @@
 <section class="bg-white py-24 sm:py-32" id="included">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl lg:text-center">
-      <h2 class="text-base font-semibold leading-7 text-indigo-600 uppercase tracking-wide">
-        Included
-      </h2>
-      <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-        What you get with every template
-      </p>
-    </div>
+    <app-section-header
+      [icon]="PackageCheck"
+      badge="Included"
+      title="What you get with every template"
+      description="Every template includes the core building blocks for a professional landing page. No hidden dependencies, just clean code."
+    ></app-section-header>
+
     <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3">
+      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
         <!-- Item 1 -->
-        <div class="relative pl-16">
-          <dt class="text-base font-semibold leading-7 text-slate-900">
-            <div
-              class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"
-            >
-              <!-- Code Icon -->
+        <div class="flex flex-col">
+          <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-slate-900">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
               <lucide-angular [img]="Code" class="h-6 w-6 text-white"></lucide-angular>
             </div>
             HTML + CSS + JS files
           </dt>
-          <dd class="mt-2 text-base leading-7 text-slate-600">
-            No frameworks, no build process. Just clean, standard code you can deploy immediately.
+          <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-600">
+            <p class="flex-auto">
+              No frameworks, no build process. Just clean, standard code you can deploy immediately.
+            </p>
           </dd>
         </div>
 
         <!-- Item 2 -->
-        <div class="relative pl-16">
-          <dt class="text-base font-semibold leading-7 text-slate-900">
-            <div
-              class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"
-            >
-              <!-- Modular Icon -->
+        <div class="flex flex-col">
+          <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-slate-900">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
               <lucide-angular [img]="LayoutGrid" class="h-6 w-6 text-white"></lucide-angular>
             </div>
             Modular sections
           </dt>
-          <dd class="mt-2 text-base leading-7 text-slate-600">
-            Hero, features, proof, pricing, etc. Mix and match components to build your perfect
-            page.
+          <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-600">
+            <p class="flex-auto">
+              Hero, features, proof, pricing, etc. Mix and match components to build your perfect
+              page.
+            </p>
           </dd>
         </div>
 
         <!-- Item 3 -->
-        <div class="relative pl-16">
-          <dt class="text-base font-semibold leading-7 text-slate-900">
-            <div
-              class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"
-            >
-              <!-- Responsive Icon -->
+        <div class="flex flex-col">
+          <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-slate-900">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
               <lucide-angular [img]="MonitorSmartphone" class="h-6 w-6 text-white"></lucide-angular>
             </div>
             Responsive layout
           </dt>
-          <dd class="mt-2 text-base leading-7 text-slate-600">
-            Mobile, tablet, and desktop ready. Tested on all major devices and viewports.
+          <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-600">
+            <p class="flex-auto">
+              Mobile, tablet, and desktop ready. Tested on all major devices and viewports.
+            </p>
           </dd>
         </div>
 
         <!-- Item 4 -->
-        <div class="relative pl-16">
-          <dt class="text-base font-semibold leading-7 text-slate-900">
-            <div
-              class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"
-            >
-              <!-- Theming Icon -->
+        <div class="flex flex-col">
+          <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-slate-900">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
               <lucide-angular [img]="Paintbrush" class="h-6 w-6 text-white"></lucide-angular>
             </div>
             Theming via CSS variables
           </dt>
-          <dd class="mt-2 text-base leading-7 text-slate-600">
-            Colors and typography definitions in one place. Change your brand color in seconds.
+          <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-600">
+            <p class="flex-auto">
+              Colors and typography definitions in one place. Change your brand color in seconds.
+            </p>
           </dd>
         </div>
 
         <!-- Item 5 -->
-        <div class="relative pl-16">
-          <dt class="text-base font-semibold leading-7 text-slate-900">
-            <div
-              class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"
-            >
-              <!-- Guide Icon -->
+        <div class="flex flex-col">
+          <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-slate-900">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
               <lucide-angular [img]="BookOpen" class="h-6 w-6 text-white"></lucide-angular>
             </div>
             Customization guide
           </dt>
-          <dd class="mt-2 text-base leading-7 text-slate-600">
-            Simple instructions included. We guide you through the initial setup and content
-            changes.
+          <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-600">
+            <p class="flex-auto">
+              Simple instructions included. We guide you through the initial setup and content
+              changes.
+            </p>
           </dd>
         </div>
 
         <!-- Item 6 -->
-        <div class="relative pl-16">
-          <dt class="text-base font-semibold leading-7 text-slate-900">
-            <div
-              class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"
-            >
-              <!-- License Icon -->
+        <div class="flex flex-col">
+          <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-slate-900">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
               <lucide-angular [img]="ShieldCheck" class="h-6 w-6 text-white"></lucide-angular>
             </div>
             License included
           </dt>
-          <dd class="mt-2 text-base leading-7 text-slate-600">
-            MIT or Apache 2.0 license. Use it for personal or commercial projects without worry.
+          <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-600">
+            <p class="flex-auto">
+              MIT or Apache 2.0 license. Use it for personal or commercial projects without worry.
+            </p>
           </dd>
         </div>
       </dl>
+    </div>
 
-      <div class="mt-16 border-t border-slate-900/10 pt-8 sm:mt-20">
-        <div class="rounded-2xl bg-slate-50 p-6 text-center ring-1 ring-slate-900/5">
-          <p class="text-sm font-medium text-slate-600">
-            Note:
-            <span class="text-slate-900">No Figma files included.</span> This is a code-first
-            product designed for developers who want to ship.
-          </p>
-        </div>
+    <div class="mt-16 sm:mt-20 flex justify-center">
+      <div
+        class="relative rounded-full px-4 py-1.5 text-sm leading-6 text-slate-600 ring-1 ring-slate-900/10 hover:ring-slate-900/20 bg-slate-50 transition-all"
+      >
+        Note: <span class="font-semibold text-slate-900">No Figma files included.</span> This is a
+        code-first product designed for developers who want to ship.
       </div>
     </div>
   </div>
