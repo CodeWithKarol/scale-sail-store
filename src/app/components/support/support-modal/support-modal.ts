@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, inject, output, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LucideAngularModule, Check, MessageSquare, ChevronDown, Loader2 } from 'lucide-angular';
 import { EMPTY } from 'rxjs';
 import { catchError, finalize, take, tap } from 'rxjs/operators';
 
@@ -8,9 +9,14 @@ import { catchError, finalize, take, tap } from 'rxjs/operators';
   selector: 'app-support-modal',
   templateUrl: './support-modal.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, LucideAngularModule],
 })
 export class SupportModal {
+  readonly Check = Check;
+  readonly MessageSquare = MessageSquare;
+  readonly ChevronDown = ChevronDown;
+  readonly Loader2 = Loader2;
+
   close = output<void>();
   private readonly http = inject(HttpClient);
 

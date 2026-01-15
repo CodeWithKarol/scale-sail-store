@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
+import { Check, LucideAngularModule } from 'lucide-angular';
 
 /**
  * Hero Section
@@ -9,6 +10,8 @@ import { NgOptimizedImage } from '@angular/common';
   templateUrl: './hero-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, LucideAngularModule],
 })
-export class HeroSection {}
+export class HeroSection {
+  readonly Check = Check;
+}

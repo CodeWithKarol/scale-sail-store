@@ -1,9 +1,26 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  LucideAngularModule,
+  Code,
+  LayoutGrid,
+  MonitorSmartphone,
+  Paintbrush,
+  BookOpen,
+  ShieldCheck,
+} from 'lucide-angular';
 
 @Component({
   selector: 'app-included-section',
   templateUrl: './included-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  imports: [LucideAngularModule],
 })
-export class IncludedSection {}
+export class IncludedSection {
+  readonly Code = Code;
+  readonly LayoutGrid = LayoutGrid;
+  readonly MonitorSmartphone = MonitorSmartphone;
+  readonly Paintbrush = Paintbrush;
+  readonly BookOpen = BookOpen;
+  readonly ShieldCheck = ShieldCheck;
+}
