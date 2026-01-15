@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { LucideAngularModule, ShieldCheck } from 'lucide-angular';
+import { LucideAngularModule, ShieldCheck, ArrowRight } from 'lucide-angular';
 import { SectionHeader } from '../ui/section-header/section-header';
 
 @Component({
@@ -12,5 +12,6 @@ import { SectionHeader } from '../ui/section-header/section-header';
 })
 export class TrustSection {
   readonly ShieldCheck = ShieldCheck;
+  readonly ArrowRight = ArrowRight;
   portfolioLink = 'https://www.karol-modelski.scale-sail.io/';
 }

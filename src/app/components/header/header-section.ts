@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { LucideAngularModule, Menu, X } from 'lucide-angular';
+import { LucideAngularModule, Menu, X, ArrowRight, ExternalLink } from 'lucide-angular';
 
 @Component({
   selector: 'app-header-section',
@@ -12,6 +12,8 @@ export class HeaderSection {
   protected readonly isMobileMenuOpen = signal(false);
   readonly Menu = Menu;
   readonly X = X;
+  readonly ArrowRight = ArrowRight;
+  readonly ExternalLink = ExternalLink;
 
   protected readonly navigation = [
     { name: 'Templates', href: '#catalog' },

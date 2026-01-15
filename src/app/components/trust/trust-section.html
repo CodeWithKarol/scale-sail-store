@@ -1,31 +1,11 @@
 <section class="relative isolate overflow-hidden bg-slate-900 py-24 sm:py-32" id="trust">
-  <!-- Gradient background effect -->
-  <div
-    class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
-    aria-hidden="true"
-  >
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 -z-10 h-full w-full bg-slate-900">
     <div
-      class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
-      style="
-        clip-path: polygon(
-          73.6% 51.7%,
-          91.7% 11.8%,
-          100% 46.4%,
-          97.4% 82.2%,
-          92.5% 84.9%,
-          75.7% 64%,
-          55.3% 47.5%,
-          46.5% 49.4%,
-          45% 62.9%,
-          50.3% 87.2%,
-          21.3% 64.1%,
-          0.1% 100%,
-          5.4% 51.1%,
-          21.4% 63.9%,
-          58.9% 0.2%,
-          73.6% 51.7%
-        );
-      "
+      class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
+    ></div>
+    <div
+      class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-indigo-500 opacity-20 blur-[100px]"
     ></div>
   </div>
 
@@ -43,33 +23,32 @@
           align="left"
           theme="dark"
         ></app-section-header>
-        <div class="lg:max-w-lg">
-          <div class="mt-10 block">
-            <a
-              [href]="portfolioLink"
-              class="text-sm font-semibold leading-6 text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-2 group"
-            >
-              Explore the portfolio
-              <span
-                class="inline-block transition-transform group-hover:translate-x-1"
-                aria-hidden="true"
-                >&rarr;</span
-              >
-            </a>
-          </div>
+        <div class="mt-8 flex items-center gap-x-6">
+          <a
+            [href]="portfolioLink"
+            class="group flex items-center gap-2 text-sm font-semibold leading-6 text-white hover:text-indigo-400 transition-colors duration-200"
+          >
+            Explore the portfolio
+            <lucide-angular
+              [img]="ArrowRight"
+              class="h-4 w-4 transition-transform group-hover:translate-x-1"
+            ></lucide-angular>
+          </a>
         </div>
       </div>
 
       <!-- Image -->
-      <div class="relative min-h-[300px] h-full">
+      <div class="relative order-first lg:order-last">
+        <div
+          class="absolute -inset-4 rounded-xl bg-slate-800/50 ring-1 ring-inset ring-slate-700/50 blur-sm"
+        ></div>
         <img
           ngSrc="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=1024"
           alt="Developer working code on a laptop screen"
-          class="rounded-2xl bg-white/5 object-cover shadow-2xl ring-1 ring-white/10"
-          fill
-          priority
+          class="relative rounded-xl bg-slate-900 shadow-2xl ring-1 ring-slate-800"
+          width="1024"
+          height="683"
         />
-        <!-- Decorative ring/border effect is handled by ring-white/10 -->
       </div>
     </div>
   </div>

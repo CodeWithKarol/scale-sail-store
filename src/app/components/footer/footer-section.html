@@ -3,91 +3,109 @@
   <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
       <div class="space-y-8">
-        <div class="flex items-center gap-x-3">
+        <a href="#" class="flex items-center gap-x-3 group transition-opacity hover:opacity-90">
           <img
             src="/scale-sail-logo.webp"
             alt="Scale Sail"
-            class="h-10 w-auto brightness-0 invert"
+            class="h-9 w-auto brightness-0 invert"
           />
-          <span class="text-2xl font-bold tracking-tight text-white">Scale Sail</span>
-        </div>
-        <p class="text-sm leading-6 text-slate-300 max-w-sm">
+          <span class="text-xl font-bold tracking-tight text-white group-hover:text-indigo-100"
+            >Scale Sail</span
+          >
+        </a>
+        <p class="text-sm leading-6 text-slate-400 max-w-sm text-balance">
           Making the world a better place through constructing elegant hierarchies. Professional
           templates for professional developers.
         </p>
       </div>
       <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-        <div>
-          <h3 class="text-sm font-semibold leading-6 text-white">Explore</h3>
-          <ul role="list" class="mt-6 space-y-4">
-            <li>
-              <a
-                href="#catalog"
-                class="text-sm leading-6 text-slate-300 hover:text-white transition-colors"
-                >Templates</a
-              >
-            </li>
-            <li>
-              <a
-                href="#why-scale-sail"
-                class="text-sm leading-6 text-slate-300 hover:text-white transition-colors"
-                >Features</a
-              >
-            </li>
-            <li>
-              <a
-                href="#how-it-works"
-                class="text-sm leading-6 text-slate-300 hover:text-white transition-colors"
-                >How it works</a
-              >
-            </li>
-            <li>
-              <a
-                href="#included"
-                class="text-sm leading-6 text-slate-300 hover:text-white transition-colors"
-                >What’s included</a
-              >
-            </li>
-          </ul>
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm font-semibold leading-6 text-white uppercase tracking-wider">
+              Explore
+            </h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a
+                  href="#catalog"
+                  class="text-sm leading-6 text-slate-400 hover:text-white transition-colors duration-200"
+                  >Templates</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#why-scale-sail"
+                  class="text-sm leading-6 text-slate-400 hover:text-white transition-colors duration-200"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  class="text-sm leading-6 text-slate-400 hover:text-white transition-colors duration-200"
+                  >How it works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#included"
+                  class="text-sm leading-6 text-slate-400 hover:text-white transition-colors duration-200"
+                  >What’s included</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="mt-10 md:mt-0">
+            <!-- Empty column placeholder or more links could go here if needed to shift layout, but sticking to 2 cols for now -->
+          </div>
         </div>
-        <div>
-          <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
-          <ul role="list" class="mt-6 space-y-4">
-            <li>
-              <a
-                href="#trust"
-                class="text-sm leading-6 text-slate-300 hover:text-white transition-colors"
-                >About Developer</a
-              >
-            </li>
-            <li>
-              <a
-                href="#faq"
-                class="text-sm leading-6 text-slate-300 hover:text-white transition-colors"
-                >FAQ</a
-              >
-            </li>
-            <li>
-              <a
-                href="#support"
-                class="text-sm leading-6 text-slate-300 hover:text-white transition-colors"
-                >Contact</a
-              >
-            </li>
-          </ul>
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm font-semibold leading-6 text-white uppercase tracking-wider">
+              Support
+            </h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a
+                  href="#trust"
+                  class="text-sm leading-6 text-slate-400 hover:text-white transition-colors duration-200"
+                  >About Developer</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  class="text-sm leading-6 text-slate-400 hover:text-white transition-colors duration-200"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#support"
+                  class="text-sm leading-6 text-slate-400 hover:text-white transition-colors duration-200"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 flex flex-col items-center justify-between gap-y-4 md:flex-row"
+      class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 flex flex-col md:flex-row justify-between items-center gap-4"
     >
       <p class="text-xs leading-5 text-slate-400">
         &copy; {{ currentYear() }} Scale Sail. All rights reserved.
       </p>
-      <p class="text-xs leading-5 text-slate-400">
-        Built with <span class="text-indigo-400 font-medium">Angular 21+</span>, Tailwind CSS & SSR
-        for SEO
-      </p>
+      <div class="flex items-center gap-x-2">
+        <span class="inline-block h-1 w-1 rounded-full bg-green-500"></span>
+        <p class="text-xs leading-5 text-slate-400">
+          Built with
+          <span class="text-white font-medium hover:text-indigo-300 transition-colors"
+            >Angular 21+</span
+          >, Tailwind CSS & SSR for SEO
+        </p>
+      </div>
     </div>
   </div>
 </footer>

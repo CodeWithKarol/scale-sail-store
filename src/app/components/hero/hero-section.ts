@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { Check, LucideAngularModule } from 'lucide-angular';
+import { Check, LucideAngularModule, ArrowRight } from 'lucide-angular';
 
 /**
  * Hero Section
@@ -14,4 +14,5 @@ import { Check, LucideAngularModule } from 'lucide-angular';
 })
 export class HeroSection {
   readonly Check = Check;
+  readonly ArrowRight = ArrowRight;
 }

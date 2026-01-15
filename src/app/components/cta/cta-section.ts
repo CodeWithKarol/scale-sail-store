@@ -1,15 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
-import { LucideAngularModule, Rocket } from 'lucide-angular';
-import { SectionHeader } from '../ui/section-header/section-header';
+import { LucideAngularModule, Rocket, ArrowRight } from 'lucide-angular';
 
 @Component({
   selector: 'app-cta-section',
   templateUrl: './cta-section.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgOptimizedImage, LucideAngularModule, SectionHeader],
+  imports: [LucideAngularModule],
 })
 export class CtaSection {
   readonly Rocket = Rocket;
+  readonly ArrowRight = ArrowRight;
 }
