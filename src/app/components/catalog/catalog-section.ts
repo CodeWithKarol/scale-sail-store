@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { LucideAngularModule, LayoutTemplate } from 'lucide-angular';
 import { SCALE_SAIL_TEMPLATES } from '../../core/config/scale-sail.config';
 import { ScaleSailTemplate } from '../../core/models/scale-sail.model';

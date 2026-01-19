@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule, LucideIconData } from 'lucide-angular';
 
 @Component({
   selector: 'app-section-header',
@@ -9,7 +9,7 @@ import { LucideAngularModule } from 'lucide-angular';
   imports: [LucideAngularModule],
 })
 export class SectionHeader {
-  icon = input<any>(null);
+  icon = input<LucideIconData | undefined>(undefined);
   badge = input<string>('');
   title = input.required<string>();
   description = input<string>('');

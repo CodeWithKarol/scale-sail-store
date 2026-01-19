@@ -4,7 +4,6 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { LucideAngularModule, LifeBuoy, Check, ChevronDown, Loader2 } from 'lucide-angular';
 import { EMPTY } from 'rxjs';
 import { catchError, finalize, take, tap } from 'rxjs/operators';
-import { SectionHeader } from '../ui/section-header/section-header';
 
 @Component({
   selector: 'app-support-section',
@@ -63,11 +62,13 @@ export class SupportSection {
         }),
         catchError((error) => {
           this.errorMessage.set(
-            error.error?.message || error.message || 'Something went wrong. Please try again later.'
+            error.error?.message ||
+              error.message ||
+              'Something went wrong. Please try again later.',
           );
           return EMPTY;
         }),
-        finalize(() => this.isSubmitting.set(false))
+        finalize(() => this.isSubmitting.set(false)),
       )
       .subscribe();
   }
