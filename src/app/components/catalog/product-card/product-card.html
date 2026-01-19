@@ -15,7 +15,7 @@
         class="inline-flex items-center rounded-full bg-white/95 backdrop-blur-md px-2.5 py-1 text-xs font-semibold shadow-sm ring-1 ring-slate-900/5"
         [ngClass]="{
           'text-green-700': product().price.amountMinor === 0,
-          'text-slate-700': product().price.amountMinor > 0
+          'text-slate-700': product().price.amountMinor > 0,
         }"
       >
         {{ product().price.amountMinor === 0 ? 'Free' : 'Premium' }}
@@ -29,7 +29,12 @@
     <div class="flex items-start justify-between gap-4">
       <div>
         <h3 class="text-lg font-bold text-slate-900 leading-snug">
-          <a [href]="product().buyUrl" target="_blank" class="focus:outline-none">
+          <a
+            [href]="product().buyUrl"
+            target="_blank"
+            class="focus:outline-none"
+            [attr.aria-label]="'View details for ' + product().name + ' (opens in new tab)'"
+          >
             <span class="absolute inset-0" aria-hidden="true"></span>
             {{ product().name }}
           </a>
@@ -42,7 +47,7 @@
         {{
           product().price.label ??
             (product().price.amountMinor / 100
-              | currency : product().price.currency : 'symbol' : '1.2-2')
+              | currency: product().price.currency : 'symbol' : '1.2-2')
         }}
       </p>
     </div>
@@ -53,13 +58,17 @@
 
     <!-- Features -->
     <div class="mt-5 space-y-2 border-t border-slate-100 pt-5">
-      @for(chip of product().chips.slice(0, 3); track chip) {
-      <div class="flex items-center gap-2 text-xs font-medium text-slate-500">
-        <svg class="h-1.5 w-1.5 fill-indigo-500 flex-shrink-0" viewBox="0 0 6 6" aria-hidden="true">
-          <circle cx="3" cy="3" r="3" />
-        </svg>
-        {{ chip }}
-      </div>
+      @for (chip of product().chips.slice(0, 3); track chip) {
+        <div class="flex items-center gap-2 text-xs font-medium text-slate-500">
+          <svg
+            class="h-1.5 w-1.5 fill-indigo-500 flex-shrink-0"
+            viewBox="0 0 6 6"
+            aria-hidden="true"
+          >
+            <circle cx="3" cy="3" r="3" />
+          </svg>
+          {{ chip }}
+        </div>
       }
     </div>
 

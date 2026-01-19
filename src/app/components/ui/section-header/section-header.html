@@ -1,19 +1,20 @@
 <div [class]="containerClass()">
   @if (icon()) {
-  <div [class]="iconContainerClass()">
-    <lucide-angular [img]="icon()" [class]="iconClass()"></lucide-angular>
-  </div>
-  } @if (badge()) {
-  <h2 [class]="badgeClass()">
-    {{ badge() }}
-  </h2>
+    <div [class]="iconContainerClass()">
+      <lucide-angular [img]="icon()" [class]="iconClass()"></lucide-angular>
+    </div>
   }
-  <p [class]="titleClass()">
+  @if (badge()) {
+    <span [class]="badgeClass()" role="text">
+      {{ badge() }}
+    </span>
+  }
+  <h2 [class]="titleClass()">
     {{ title() }}
-  </p>
+  </h2>
   @if (description()) {
-  <p [class]="descriptionClass()">
-    {{ description() }}
-  </p>
+    <p [class]="descriptionClass()">
+      {{ description() }}
+    </p>
   }
 </div>

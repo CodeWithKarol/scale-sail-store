@@ -1,4 +1,5 @@
 <header
+  role="banner"
   class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-900/5 transition-all duration-300"
 >
   <nav
@@ -28,11 +29,11 @@
     </div>
     <div class="hidden lg:flex lg:gap-x-10">
       @for (item of navigation; track item.name) {
-      <a
-        [href]="item.href"
-        class="text-sm font-semibold leading-6 text-slate-700 hover:text-indigo-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-indigo-600 after:transition-all hover:after:w-full"
-        >{{ item.name }}</a
-      >
+        <a
+          [href]="item.href"
+          class="text-sm font-semibold leading-6 text-slate-700 hover:text-indigo-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-indigo-600 after:transition-all hover:after:w-full"
+          >{{ item.name }}</a
+        >
       }
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-8 items-center">
@@ -62,65 +63,65 @@
 </header>
 
 @if (isMobileMenuOpen()) {
-<div class="lg:hidden" role="dialog" aria-modal="true">
-  <div
-    class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm"
-    (click)="closeMobileMenu()"
-  ></div>
-  <div
-    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-4 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10 shadow-xl"
-  >
-    <div class="flex items-center justify-between">
-      <a href="#" class="-m-1.5 p-1.5 flex items-center gap-3" (click)="closeMobileMenu()">
-        <span class="sr-only">Scale Sail</span>
-        <img src="/scale-sail-logo.webp" alt="Scale Sail" class="h-10 w-auto" />
-        <span class="text-xl font-bold tracking-tight text-slate-900">Scale Sail</span>
-      </a>
-      <button
-        type="button"
-        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
-        (click)="closeMobileMenu()"
-      >
-        <span class="sr-only">Close menu</span>
-        <lucide-angular [img]="X" class="h-6 w-6"></lucide-angular>
-      </button>
-    </div>
-    <div class="mt-8 flow-root">
-      <div class="-my-6 divide-y divide-slate-100">
-        <div class="space-y-2 py-6">
-          @for (item of navigation; track item.name) {
-          <a
-            [href]="item.href"
-            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
-            (click)="closeMobileMenu()"
-            >{{ item.name }}</a
-          >
-          }
-        </div>
-        <div class="py-6 space-y-4">
-          <a
-            href="https://www.karol-modelski.scale-sail.io/"
-            target="_blank"
-            class="-mx-3 flex items-center gap-2 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-900 hover:bg-indigo-50 hover:text-indigo-600 transition-colors group"
-            (click)="closeMobileMenu()"
-          >
-            View portfolio
-            <lucide-angular
-              [img]="ExternalLink"
-              class="h-4 w-4 text-slate-400 group-hover:text-indigo-600 transition-colors"
-            ></lucide-angular>
-          </a>
-          <a
-            href="#catalog"
-            class="flex w-full items-center justify-center gap-2 rounded-md bg-slate-900 px-3 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
-            (click)="closeMobileMenu()"
-          >
-            Shop templates
-            <lucide-angular [img]="ArrowRight" class="h-4 w-4"></lucide-angular>
-          </a>
+  <div class="lg:hidden" role="dialog" aria-modal="true">
+    <div
+      class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm"
+      (click)="closeMobileMenu()"
+    ></div>
+    <div
+      class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-4 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10 shadow-xl"
+    >
+      <div class="flex items-center justify-between">
+        <a href="#" class="-m-1.5 p-1.5 flex items-center gap-3" (click)="closeMobileMenu()">
+          <span class="sr-only">Scale Sail</span>
+          <img src="/scale-sail-logo.webp" alt="Scale Sail" class="h-10 w-auto" />
+          <span class="text-xl font-bold tracking-tight text-slate-900">Scale Sail</span>
+        </a>
+        <button
+          type="button"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
+          (click)="closeMobileMenu()"
+        >
+          <span class="sr-only">Close menu</span>
+          <lucide-angular [img]="X" class="h-6 w-6"></lucide-angular>
+        </button>
+      </div>
+      <div class="mt-8 flow-root">
+        <div class="-my-6 divide-y divide-slate-100">
+          <div class="space-y-2 py-6">
+            @for (item of navigation; track item.name) {
+              <a
+                [href]="item.href"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                (click)="closeMobileMenu()"
+                >{{ item.name }}</a
+              >
+            }
+          </div>
+          <div class="py-6 space-y-4">
+            <a
+              href="https://www.karol-modelski.scale-sail.io/"
+              target="_blank"
+              class="-mx-3 flex items-center gap-2 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-900 hover:bg-indigo-50 hover:text-indigo-600 transition-colors group"
+              (click)="closeMobileMenu()"
+            >
+              View portfolio
+              <lucide-angular
+                [img]="ExternalLink"
+                class="h-4 w-4 text-slate-400 group-hover:text-indigo-600 transition-colors"
+              ></lucide-angular>
+            </a>
+            <a
+              href="#catalog"
+              class="flex w-full items-center justify-center gap-2 rounded-md bg-slate-900 px-3 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+              (click)="closeMobileMenu()"
+            >
+              Shop templates
+              <lucide-angular [img]="ArrowRight" class="h-4 w-4"></lucide-angular>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 }

@@ -18,7 +18,11 @@
           <div
             class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-500/10 ring-1 ring-inset ring-indigo-500/20 backdrop-blur-sm"
           >
-            <lucide-angular [img]="Rocket" class="h-8 w-8 text-indigo-400"></lucide-angular>
+            <lucide-angular
+              [img]="Rocket"
+              class="h-8 w-8 text-indigo-400"
+              aria-hidden="true"
+            ></lucide-angular>
           </div>
         </div>
 
@@ -44,9 +48,11 @@
             class="text-sm font-semibold leading-6 text-white flex items-center gap-2 group hover:text-indigo-300 transition-colors"
           >
             View portfolio
+            <span class="sr-only">(opens in a new tab)</span>
             <lucide-angular
               [img]="ArrowRight"
               class="h-4 w-4 transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
             ></lucide-angular>
           </a>
         </div>
